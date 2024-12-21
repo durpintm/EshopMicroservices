@@ -23,7 +23,7 @@ public class UpdateProductCommandHandler(IDocumentSession session, ILogger<Updat
 
         var product = await session.LoadAsync<Product>(command.Id, cancellationToken);
 
-        if (product == null) { throw new ProductNotFoundException(); }
+        if (product == null) { throw new ProductNotFoundException(command.Id); }
 
         product.Name = command.Name;
         product.Category = command.Category;

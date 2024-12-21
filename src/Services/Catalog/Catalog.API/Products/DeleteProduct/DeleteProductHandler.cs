@@ -10,7 +10,7 @@ public class DeleteProductCommandValidator : AbstractValidator<DeleteProductComm
     {
         RuleFor(command => command.Id).NotEmpty().WithMessage("Product Id is required");
     }
-} 
+}
 
 public class DeleteProductCommandHandler(IDocumentSession session, ILogger<DeleteProductCommandHandler> logger) : ICommandHandler<DeleteProductCommand, DeleteProductResult>
 {
@@ -20,7 +20,7 @@ public class DeleteProductCommandHandler(IDocumentSession session, ILogger<Delet
 
         var product = await session.LoadAsync<Product>(command.Id);
 
-        if (product == null) { throw new ProductNotFoundException(); }
+        if (product == null) { throw new ProductNotFoundException(command.Id); }
 
         session.Delete<Product>(product.Id);
         await session.SaveChangesAsync();
