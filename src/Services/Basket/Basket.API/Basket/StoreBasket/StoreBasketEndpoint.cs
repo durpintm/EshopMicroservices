@@ -1,7 +1,4 @@
-﻿
-using Basket.API.Basket.GetBasket;
-
-namespace Basket.API.Basket.StoreBasket;
+﻿namespace Basket.API.Basket.StoreBasket;
 
 public record StoreBasketRequest(ShoppingCart Cart);
 
@@ -10,11 +7,11 @@ public class StoreBasketEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPost("/basket", async (StoreBasketRequest request, ISender sender) =>
+        app.MapPost("/basket", async (StoreBasketRequest request, ISender sender, CancellationToken cancellation) =>
         {
             var command = request.Adapt<StoreBasketCommand>();
 
-            var result = await sender.Send(command);
+            var result = await sender.Send(command, cancellation);
 
             var response = result.Adapt<StoreBasketResponse>();
 
