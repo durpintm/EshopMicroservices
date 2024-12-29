@@ -15,7 +15,7 @@ public class DeleteBasketEndpoint : ICarterModule
 
             return Results.Ok(response);
         })
-        .WithName("DeleteBasketByUserName")
+        .WithName("DeleteBasketByUserName") 
         .Produces<DeleteBasketResponse>(StatusCodes.Status200OK)
         .ProducesProblem(StatusCodes.Status400BadRequest)
         .WithSummary("Delete Basket By UserName")
