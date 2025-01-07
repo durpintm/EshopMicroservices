@@ -17,9 +17,10 @@ public class StoreBasketCommandHandler(IBasketRepository repository) : ICommandH
 {
     public async Task<StoreBasketResult> Handle(StoreBasketCommand command, CancellationToken cancellationToken)
     {
-        ShoppingCart cart = command.Cart;
+        // Communicate with Discount.Grpc and calculate the latest prices of products in the basket
 
-        await repository.StoreBasket(cart, cancellationToken);
+
+        await repository.StoreBasket(command.Cart, cancellationToken);
 
         return new StoreBasketResult(command.Cart.UserName);
 

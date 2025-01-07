@@ -21,7 +21,7 @@ public class StoreBasketEndpoint : ICarterModule
         .Produces<StoreBasketResponse>(StatusCodes.Status201Created)
         .ProducesProblem(StatusCodes.Status400BadRequest)
         .WithSummary("Create Basket")
-        .WithDescription("Create Basket"); ;
+        .WithDescription("Create Basket");
     }
 }
 
