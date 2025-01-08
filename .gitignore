@@ -394,5 +394,9 @@ FodyWeavers.xsd
 *.msm
 *.msp
 
+# Sqlite DB files
+*-shm
+*-wal
+
 # JetBrains Rider
 *.sln.iml
