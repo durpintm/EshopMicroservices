@@ -1,8 +1,4 @@
-﻿using Ordering.API.Abstractions;
-using Ordering.API.Enums;
-using Ordering.API.ValueObjects;
-
-namespace Ordering.API.Models;
+﻿namespace Ordering.Domain.Models;
 public class Order : Aggregate<Guid>
 {
     private readonly List<OrderItem> _orderItems = new();

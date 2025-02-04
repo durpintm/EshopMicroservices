@@ -1,4 +1,4 @@
-﻿namespace Ordering.API.Enums;
+﻿namespace Ordering.Domain.Enums;
 public enum OrderStatus
 {
     Draft = 1,
@@ -6,4 +6,3 @@ public enum OrderStatus
     Completed = 3,
     Cancelled = 4,
 }
-

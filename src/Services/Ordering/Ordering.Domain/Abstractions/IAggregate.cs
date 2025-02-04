@@ -1,6 +1,4 @@
-﻿namespace Ordering.API.Abstractions;
-
-public interface IAggregate<T> : IAggregate, IEntity<T>
+﻿public interface IAggregate<T> : IAggregate, IEntity<T>
 {
 
 }

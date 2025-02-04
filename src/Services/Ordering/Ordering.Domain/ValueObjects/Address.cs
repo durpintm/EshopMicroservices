@@ -1,4 +1,4 @@
-﻿namespace Ordering.API.ValueObjects;
+﻿namespace Ordering.Domain.ValueObjects;
 public record Address
 {
     public string FirstName { get; } = default!;

@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Ordering.API.Abstractions;
+namespace Ordering.Domain.Abstractions;
 public interface IDomainEvent : INotification
 {
     Guid EventId => Guid.NewGuid();

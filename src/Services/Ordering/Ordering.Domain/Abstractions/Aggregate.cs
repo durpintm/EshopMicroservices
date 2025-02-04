@@ -1,6 +1,4 @@
-﻿
-namespace Ordering.API.Abstractions;
-public abstract class Aggregate<TId> : Entity<TId>, IAggregate<TId>
+﻿public abstract class Aggregate<TId> : Entity<TId>, IAggregate<TId>
 {
     private readonly List<IDomainEvent> _domainEvents = new();
     public IReadOnlyList<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();

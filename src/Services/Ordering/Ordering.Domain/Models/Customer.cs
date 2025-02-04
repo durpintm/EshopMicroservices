@@ -1,6 +1,4 @@
-﻿using Ordering.API.Abstractions;
-
-namespace Ordering.API.Models;
+﻿namespace Ordering.API.Models;
 
 public class Customer : Entity<Guid>
 {
