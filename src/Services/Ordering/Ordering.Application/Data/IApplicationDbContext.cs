@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Ordering.API.Models;
 using Ordering.Domain.Models;
 
 namespace Ordering.Application.Data;
