@@ -16,7 +16,7 @@ public class DeleteOrderHandler(IApplicationDbContext dbContext) : ICommandHandl
         dbContext.Orders.Remove(order);
         await dbContext.SaveChangesAsync(cancellationToken);
 
-        return new DeleteOrderResult(true);
+        return new DeleteOrderResult(true); 
     }
 }
 
