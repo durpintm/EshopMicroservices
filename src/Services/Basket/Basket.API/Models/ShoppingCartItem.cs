@@ -7,4 +7,3 @@ public class ShoppingCartItem
     public Guid ProductId { get; set; } = default!;
     public string ProductName { get; set; } = default!;
 }
-
