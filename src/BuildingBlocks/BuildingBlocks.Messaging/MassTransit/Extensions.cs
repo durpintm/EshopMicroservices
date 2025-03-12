@@ -15,8 +15,6 @@ public static class Extensions
             if (assembly != null)
             {
                 config.AddConsumers(assembly);
-                Console.WriteLine($"Consumers from assembly: {assembly.FullName} are being registered.");
-
             }
 
             config.UsingRabbitMq((context, configurator) =>
@@ -27,10 +25,7 @@ public static class Extensions
                     host.Password(configuration["MessageBroker:Password"]!);
                 });
 
-                configurator.ReceiveEndpoint("basket-checkout-queue", e =>
-                {
-                    e.ConfigureConsumers(context);
-                });
+                configurator.ConfigureEndpoints(context);
             });
         });
         return services;
